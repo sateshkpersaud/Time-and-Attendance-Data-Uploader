@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="TA" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\sateshp2\\Documents\\Visual\ Studio\ 2012\\Projects\\TA\\WebApplication8\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\sateshp2\\Documents\\Visual\ Studio\ 2012\\Projects\\TA\\WebApplication8\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="TA/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\sateshp2\\Documents\\Visual\ Studio\ 2012\\Projects\\TA\\WebApplication8\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="AcuPayConnectionString-Web.config Connection String" description="" value="Data Source=TASERVER\ACUPAY;Initial Catalog=AcuPay;Integrated Security=false; password=Damage010; user id=sa" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\sateshp2\\Documents\\Visual\ Studio\ 2012\\Projects\\TA\\WebApplication8\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AcuPayConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="AcuPayEntities-Web.config Connection String" description="" value="metadata=res://*/App_Data.AcuPayModel.csdl|res://*/App_Data.AcuPayModel.ssdl|res://*/App_Data.AcuPayModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=TASERVER\ACUPAY;initial catalog=AcuPay;persist security info=True;user id=sa;password=Damage010;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\sateshp2\\Documents\\Visual\ Studio\ 2012\\Projects\\TA\\WebApplication8\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AcuPayEntities']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\v11.0;Initial Catalog=aspnet-WebApplication8-20131001133611;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|\aspnet-WebApplication8-20131001133611.mdf" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\sateshp2\\Documents\\Visual\ Studio\ 2012\\Projects\\TA\\WebApplication8\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

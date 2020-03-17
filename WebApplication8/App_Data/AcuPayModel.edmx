@@ -1,0 +1,718 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AcuPayModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="AcuPayModelStoreContainer">
+          <EntitySet Name="tbl_1_Export_PieceWork" EntityType="AcuPayModel.Store.tbl_1_Export_PieceWork" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_2_Export_TimeDetails" EntityType="AcuPayModel.Store.tbl_2_Export_TimeDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_3_Export_OtherEarnings" EntityType="AcuPayModel.Store.tbl_3_Export_OtherEarnings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_4_Export_SplitTime" EntityType="AcuPayModel.Store.tbl_4_Export_SplitTime" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_5_Export_PieceTime" EntityType="AcuPayModel.Store.tbl_5_Export_PieceTime" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_6_Export_NotRequired" EntityType="AcuPayModel.Store.tbl_6_Export_NotRequired" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_Estate" EntityType="AcuPayModel.Store.tbl_Estate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_Servers" EntityType="AcuPayModel.Store.tbl_Servers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_Users" EntityType="AcuPayModel.Store.tbl_Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tbl_Users_Servers" EntityType="AcuPayModel.Store.tbl_Users_Servers" store:Type="Tables" store:Schema="dbo" store:Name="tbl_Users_Servers">
+            <DefiningQuery>SELECT 
+      [tbl_Users_Servers].[UserID] AS [UserID], 
+      [tbl_Users_Servers].[ServerID] AS [ServerID], 
+      [tbl_Users_Servers].[EstatesID] AS [EstatesID]
+      FROM [dbo].[tbl_Users_Servers] AS [tbl_Users_Servers]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <EntityType Name="tbl_1_Export_PieceWork">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Seq_No" Type="numeric" Nullable="false" Precision="8" />
+          <Property Name="WorkDate" Type="date" Nullable="false" />
+          <Property Name="Quantity" Type="numeric" Nullable="false" Precision="8" Scale="3" />
+          <Property Name="TentativeRate" Type="numeric" Nullable="false" Precision="12" />
+          <Property Name="TotalEarnings" Type="numeric" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="DayWorked" Type="numeric" Nullable="false" Precision="3" Scale="2" />
+          <Property Name="ActivityMaster" Type="numeric" Precision="12" />
+          <Property Name="ActivityCode" Type="varchar" MaxLength="20" />
+          <Property Name="ExpenseCode" Type="numeric" Precision="12" />
+          <Property Name="Holding_ac_Code" Type="varchar" MaxLength="5" />
+          <Property Name="LocationID" Type="varchar" MaxLength="8" />
+          <Property Name="ChargedTo" Type="varchar" MaxLength="6" />
+          <Property Name="EstateLocationId" Type="varchar" MaxLength="4" />
+          <Property Name="EstateiD" Type="varchar" MaxLength="4" />
+          <Property Name="est_emp_no" Type="numeric" Precision="8" />
+          <Property Name="Uploaded" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="TemporaryGang" Type="nchar" MaxLength="10" />
+          <Property Name="TemporaryGangOption" Type="nchar" MaxLength="10" />
+          <Property Name="Recoverable" Type="nchar" MaxLength="10" />
+          <Property Name="Unit" Type="nchar" MaxLength="10" />
+          <Property Name="UploadedBy" Type="varchar" MaxLength="50" />
+          <Property Name="UploadedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_2_Export_TimeDetails">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_seq_no" Type="numeric" Precision="8" />
+          <Property Name="WorkDate" Type="date" />
+          <Property Name="ShiftId" Type="numeric" Precision="3" />
+          <Property Name="FromTime" Type="time" Precision="4" />
+          <Property Name="ToTime" Type="time" Precision="4" />
+          <Property Name="OverNight" Type="varchar" MaxLength="50" />
+          <Property Name="HasSplit" Type="varchar" MaxLength="1" />
+          <Property Name="SS_FromTime" Type="time" Precision="4" />
+          <Property Name="SS_ToTime" Type="time" Precision="4" />
+          <Property Name="Rate" Type="numeric" Precision="8" Scale="2" />
+          <Property Name="ActivityMaster" Type="numeric" Precision="12" />
+          <Property Name="ActivityCode" Type="varchar" MaxLength="20" />
+          <Property Name="Holding_Acc_Code" Type="varchar" MaxLength="5" />
+          <Property Name="LocationId" Type="varchar" MaxLength="8" />
+          <Property Name="ChargedTo" Type="varchar" MaxLength="6" />
+          <Property Name="EstateLocationID" Type="varchar" MaxLength="4" />
+          <Property Name="EstateID" Type="varchar" MaxLength="4" />
+          <Property Name="TypeOfEntry" Type="varchar" MaxLength="10" />
+          <Property Name="est_emp_no" Type="numeric" Precision="8" />
+          <Property Name="Uploaded" Type="varchar" MaxLength="1" />
+          <Property Name="TemporaryGang" Type="nchar" MaxLength="10" />
+          <Property Name="TemporaryGangOption" Type="nchar" MaxLength="10" />
+          <Property Name="Vehicle" Type="nchar" MaxLength="10" />
+          <Property Name="Recoverable" Type="nchar" MaxLength="10" />
+          <Property Name="Quantity" Type="nchar" MaxLength="10" />
+          <Property Name="UploadedBy" Type="varchar" MaxLength="25" />
+          <Property Name="UploadedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_3_Export_OtherEarnings">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_seq_no" Type="numeric" Nullable="false" Precision="8" />
+          <Property Name="Work_date" Type="date" Nullable="false" />
+          <Property Name="INCOME_ID" Type="varchar" MaxLength="10" />
+          <Property Name="Amount" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="EarningRate" Type="numeric" Precision="8" Scale="2" />
+          <Property Name="Total_other_earnings" Type="numeric" Precision="10" Scale="2" />
+          <Property Name="Earnings_table_name" Type="nchar" MaxLength="10" />
+          <Property Name="Link_id" Type="nchar" MaxLength="10" />
+          <Property Name="Estate_location_id" Type="varchar" MaxLength="4" />
+          <Property Name="Estate_ID" Type="varchar" MaxLength="4" />
+          <Property Name="est_emp_no" Type="numeric" Precision="8" />
+          <Property Name="Uploaded" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="UploadedBy" Type="varchar" MaxLength="25" />
+          <Property Name="UploadedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_4_Export_SplitTime">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_seq_no" Type="numeric" Nullable="false" Precision="8" />
+          <Property Name="WorkDate" Type="date" Nullable="false" />
+          <Property Name="ShiftId" Type="numeric" Precision="3" />
+          <Property Name="FromTime" Type="time" Nullable="false" Precision="4" />
+          <Property Name="ToTime" Type="time" Nullable="false" Precision="4" />
+          <Property Name="OverNight" Type="varchar" MaxLength="50" />
+          <Property Name="HasSplit" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="SS_FromTime" Type="time" Precision="4" />
+          <Property Name="SS_ToTime" Type="time" Precision="4" />
+          <Property Name="Rate" Type="numeric" Precision="8" Scale="2" />
+          <Property Name="ActivityMaster" Type="numeric" Precision="12" />
+          <Property Name="ActivityCode" Type="varchar" MaxLength="20" />
+          <Property Name="Holding_Acc_Code" Type="varchar" MaxLength="5" />
+          <Property Name="LocationId" Type="varchar" MaxLength="8" />
+          <Property Name="ChargedTo" Type="varchar" MaxLength="6" />
+          <Property Name="EstateLocationID" Type="varchar" MaxLength="4" />
+          <Property Name="EstateID" Type="varchar" MaxLength="4" />
+          <Property Name="TypeOfEntry" Type="varchar" MaxLength="10" />
+          <Property Name="est_emp_no" Type="numeric" Precision="8" />
+          <Property Name="Uploaded" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="Vehicle" Type="nchar" MaxLength="10" />
+          <Property Name="Recoverable" Type="nchar" MaxLength="10" />
+          <Property Name="Unit" Type="nchar" MaxLength="10" />
+          <Property Name="UploadedBy" Type="varchar" MaxLength="25" />
+          <Property Name="UploadedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_5_Export_PieceTime">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_seq_no" Type="numeric" Nullable="false" Precision="8" />
+          <Property Name="WorkDate" Type="date" Nullable="false" />
+          <Property Name="ShiftId" Type="numeric" Precision="3" />
+          <Property Name="FromTime" Type="time" Nullable="false" Precision="4" />
+          <Property Name="ToTime" Type="time" Nullable="false" Precision="4" />
+          <Property Name="OverNight" Type="varchar" MaxLength="50" />
+          <Property Name="HasSplit" Type="varchar" MaxLength="1" />
+          <Property Name="SS_FromTime" Type="time" Precision="4" />
+          <Property Name="SS_ToTime" Type="time" Precision="4" />
+          <Property Name="Rate" Type="numeric" Precision="8" Scale="2" />
+          <Property Name="Qty" Type="float" />
+          <Property Name="TotalEarnings" Type="float" />
+          <Property Name="ActivityMaster" Type="numeric" Precision="12" />
+          <Property Name="ActivityCode" Type="varchar" MaxLength="20" />
+          <Property Name="Holding_Acc_Code" Type="varchar" MaxLength="5" />
+          <Property Name="LocationId" Type="varchar" MaxLength="8" />
+          <Property Name="ChargedTo" Type="varchar" MaxLength="6" />
+          <Property Name="EstateLocationID" Type="varchar" MaxLength="4" />
+          <Property Name="EstateID" Type="varchar" MaxLength="4" />
+          <Property Name="TypeOfEntry" Type="varchar" MaxLength="10" />
+          <Property Name="DayWorked" Type="numeric" Precision="3" Scale="2" />
+          <Property Name="est_emp_no" Type="numeric" Precision="8" />
+          <Property Name="Uploaded" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="Unit" Type="nchar" MaxLength="10" />
+          <Property Name="TemporaryGang" Type="nchar" MaxLength="10" />
+          <Property Name="TemporaryGangOption" Type="nchar" MaxLength="10" />
+          <Property Name="UploadedBy" Type="varchar" MaxLength="25" />
+          <Property Name="UploadedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_6_Export_NotRequired">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="emp_seq_no" Type="numeric" />
+          <Property Name="WorkDate" Type="date" />
+          <Property Name="NRStatus" Type="nchar" MaxLength="10" />
+          <Property Name="EstateLocationId" Type="varchar" MaxLength="20" />
+          <Property Name="EstateId" Type="varchar" MaxLength="20" />
+          <Property Name="est_emp_no" Type="numeric" Precision="8" />
+          <Property Name="Uploaded" Type="varchar" Nullable="false" MaxLength="1" />
+          <Property Name="UploadedBy" Type="varchar" MaxLength="25" />
+          <Property Name="UploadedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_Estate">
+          <Key>
+            <PropertyRef Name="EstateID" />
+          </Key>
+          <Property Name="EstateID" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Guy_EstateCode" Type="char" MaxLength="50" />
+          <Property Name="Guy_EstateLocation" Type="char" MaxLength="50" />
+          <Property Name="EstateName" Type="char" MaxLength="50" />
+          <Property Name="AddressL1" Type="char" MaxLength="50" />
+          <Property Name="AddressL2" Type="char" MaxLength="50" />
+          <Property Name="AddressL3" Type="char" MaxLength="50" />
+          <Property Name="Tel" Type="char" MaxLength="50" />
+          <Property Name="EstateExpCode" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tbl_Servers">
+          <Key>
+            <PropertyRef Name="ServerID" />
+          </Key>
+          <Property Name="ServerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Server" Type="varchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tbl_Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="Admin" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Acupay.dbo.tbl_Users_Servers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="tbl_Users_Servers">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="ServerID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="ServerID" Type="int" Nullable="false" />
+          <Property Name="EstatesID" Type="numeric" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AcuPayModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AcuPayEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_1_Export_PieceWork" EntityType="AcuPayModel.tbl_1_Export_PieceWork" />
+          <EntitySet Name="tbl_2_Export_TimeDetails" EntityType="AcuPayModel.tbl_2_Export_TimeDetails" />
+          <EntitySet Name="tbl_3_Export_OtherEarnings" EntityType="AcuPayModel.tbl_3_Export_OtherEarnings" />
+          <EntitySet Name="tbl_4_Export_SplitTime" EntityType="AcuPayModel.tbl_4_Export_SplitTime" />
+          <EntitySet Name="tbl_5_Export_PieceTime" EntityType="AcuPayModel.tbl_5_Export_PieceTime" />
+          <EntitySet Name="tbl_6_Export_NotRequired" EntityType="AcuPayModel.tbl_6_Export_NotRequired" />
+          <EntitySet Name="tbl_Servers" EntityType="AcuPayModel.tbl_Servers" />
+          <EntitySet Name="tbl_Users" EntityType="AcuPayModel.tbl_Users" />
+          <EntitySet Name="tbl_Users_Servers" EntityType="AcuPayModel.tbl_Users_Servers" />
+          <EntitySet Name="tbl_Estate" EntityType="AcuPayModel.tbl_Estate" />
+        </EntityContainer>
+        <EntityType Name="tbl_1_Export_PieceWork">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Emp_Seq_No" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+          <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="8" Scale="3" />
+          <Property Name="TentativeRate" Type="Decimal" Nullable="false" Precision="12" Scale="0" />
+          <Property Name="TotalEarnings" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="DayWorked" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
+          <Property Name="ActivityMaster" Type="Decimal" Precision="12" Scale="0" />
+          <Property Name="ActivityCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ExpenseCode" Type="Decimal" Precision="12" Scale="0" />
+          <Property Name="Holding_ac_Code" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="LocationID" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="ChargedTo" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="EstateLocationId" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="EstateiD" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Type="Decimal" Name="est_emp_no" Precision="8" Scale="0" />
+          <Property Type="String" Name="Uploaded" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TemporaryGang" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="TemporaryGangOption" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Recoverable" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Unit" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="UploadedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UploadedOn" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_2_Export_TimeDetails">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Emp_seq_no" Type="Decimal" Precision="8" Scale="0" />
+          <Property Name="WorkDate" Type="DateTime" Precision="0" />
+          <Property Name="ShiftId" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="FromTime" Type="Time" Precision="4" />
+          <Property Name="ToTime" Type="Time" Precision="4" />
+          <Property Name="OverNight" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="HasSplit" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="SS_FromTime" Type="Time" Precision="4" />
+          <Property Name="SS_ToTime" Type="Time" Precision="4" />
+          <Property Name="Rate" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="ActivityMaster" Type="Decimal" Precision="12" Scale="0" />
+          <Property Name="ActivityCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Holding_Acc_Code" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="LocationId" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="ChargedTo" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="EstateLocationID" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="EstateID" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="TypeOfEntry" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Type="Decimal" Name="est_emp_no" Precision="8" Scale="0" />
+          <Property Type="String" Name="Uploaded" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="TemporaryGang" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="TemporaryGangOption" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Vehicle" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Recoverable" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Quantity" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="UploadedBy" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UploadedOn" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_3_Export_OtherEarnings">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Emp_seq_no" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+          <Property Name="Work_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="INCOME_ID" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Amount" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="EarningRate" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="Total_other_earnings" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Earnings_table_name" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Link_id" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="Estate_location_id" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="Estate_ID" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Type="Decimal" Name="est_emp_no" Precision="8" Scale="0" />
+          <Property Type="String" Name="Uploaded" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UploadedBy" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UploadedOn" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_4_Export_SplitTime">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Emp_seq_no" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+          <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ShiftId" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="FromTime" Type="Time" Nullable="false" Precision="4" />
+          <Property Name="ToTime" Type="Time" Nullable="false" Precision="4" />
+          <Property Name="OverNight" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="HasSplit" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="SS_FromTime" Type="Time" Precision="4" />
+          <Property Name="SS_ToTime" Type="Time" Precision="4" />
+          <Property Name="Rate" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="ActivityMaster" Type="Decimal" Precision="12" Scale="0" />
+          <Property Name="ActivityCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Holding_Acc_Code" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="LocationId" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="ChargedTo" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="EstateLocationID" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="EstateID" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="TypeOfEntry" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Type="Decimal" Name="est_emp_no" Precision="8" Scale="0" />
+          <Property Type="String" Name="Uploaded" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Vehicle" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Recoverable" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="Unit" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="UploadedBy" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UploadedOn" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_5_Export_PieceTime">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Emp_seq_no" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+          <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ShiftId" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="FromTime" Type="Time" Nullable="false" Precision="4" />
+          <Property Name="ToTime" Type="Time" Nullable="false" Precision="4" />
+          <Property Name="OverNight" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="HasSplit" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="SS_FromTime" Type="Time" Precision="4" />
+          <Property Name="SS_ToTime" Type="Time" Precision="4" />
+          <Property Name="Rate" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="Qty" Type="Double" />
+          <Property Name="TotalEarnings" Type="Double" />
+          <Property Name="ActivityMaster" Type="Decimal" Precision="12" Scale="0" />
+          <Property Name="ActivityCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Holding_Acc_Code" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+          <Property Name="LocationId" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="ChargedTo" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="EstateLocationID" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="EstateID" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+          <Property Name="TypeOfEntry" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="DayWorked" Type="Decimal" Precision="3" Scale="2" />
+          <Property Type="Decimal" Name="est_emp_no" Precision="8" Scale="0" />
+          <Property Type="String" Name="Uploaded" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Unit" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="TemporaryGang" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="TemporaryGangOption" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="UploadedBy" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UploadedOn" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_6_Export_NotRequired">
+          <Key>
+            <PropertyRef Name="RecordId" />
+          </Key>
+          <Property Name="RecordId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="emp_seq_no" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="WorkDate" Type="DateTime" Precision="0" />
+          <Property Name="NRStatus" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Type="String" Name="EstateLocationId" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="EstateId" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="est_emp_no" Precision="8" Scale="0" />
+          <Property Type="String" Name="Uploaded" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="UploadedBy" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UploadedOn" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_Servers">
+          <Key>
+            <PropertyRef Name="ServerID" />
+          </Key>
+          <Property Type="Int32" Name="ServerID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Server" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Type="Int32" Name="UserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Active" />
+          <Property Type="Boolean" Name="Admin" />
+        </EntityType>
+        <EntityType Name="tbl_Users_Servers">
+          <Key>
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="ServerID" />
+          </Key>
+          <Property Type="Int32" Name="UserID" Nullable="false" />
+          <Property Type="Int32" Name="ServerID" Nullable="false" />
+          <Property Type="Decimal" Name="EstatesID" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="tbl_Estate">
+          <Key>
+            <PropertyRef Name="EstateID" />
+          </Key>
+          <Property Type="Decimal" Name="EstateID" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Guy_EstateCode" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Guy_EstateLocation" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="EstateName" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="AddressL1" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="AddressL2" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="AddressL3" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="Tel" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="EstateExpCode" MaxLength="10" FixedLength="true" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AcuPayModelStoreContainer" CdmEntityContainer="AcuPayEntities">
+          <EntitySetMapping Name="tbl_1_Export_PieceWork">
+            <EntityTypeMapping TypeName="AcuPayModel.tbl_1_Export_PieceWork">
+              <MappingFragment StoreEntitySet="tbl_1_Export_PieceWork">
+                <ScalarProperty Name="UploadedOn" ColumnName="UploadedOn" />
+                <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Recoverable" ColumnName="Recoverable" />
+                <ScalarProperty Name="TemporaryGangOption" ColumnName="TemporaryGangOption" />
+                <ScalarProperty Name="TemporaryGang" ColumnName="TemporaryGang" />
+                <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+                <ScalarProperty Name="est_emp_no" ColumnName="est_emp_no" />
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Emp_Seq_No" ColumnName="Emp_Seq_No" />
+                <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="TentativeRate" ColumnName="TentativeRate" />
+                <ScalarProperty Name="TotalEarnings" ColumnName="TotalEarnings" />
+                <ScalarProperty Name="DayWorked" ColumnName="DayWorked" />
+                <ScalarProperty Name="ActivityMaster" ColumnName="ActivityMaster" />
+                <ScalarProperty Name="ActivityCode" ColumnName="ActivityCode" />
+                <ScalarProperty Name="ExpenseCode" ColumnName="ExpenseCode" />
+                <ScalarProperty Name="Holding_ac_Code" ColumnName="Holding_ac_Code" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="ChargedTo" ColumnName="ChargedTo" />
+                <ScalarProperty Name="EstateLocationId" ColumnName="EstateLocationId" />
+                <ScalarProperty Name="EstateiD" ColumnName="EstateiD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_2_Export_TimeDetails">
+            <EntityTypeMapping TypeName="AcuPayModel.tbl_2_Export_TimeDetails">
+              <MappingFragment StoreEntitySet="tbl_2_Export_TimeDetails">
+                <ScalarProperty Name="UploadedOn" ColumnName="UploadedOn" />
+                <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Recoverable" ColumnName="Recoverable" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="TemporaryGangOption" ColumnName="TemporaryGangOption" />
+                <ScalarProperty Name="TemporaryGang" ColumnName="TemporaryGang" />
+                <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+                <ScalarProperty Name="est_emp_no" ColumnName="est_emp_no" />
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Emp_seq_no" ColumnName="Emp_seq_no" />
+                <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+                <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+                <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+                <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+                <ScalarProperty Name="OverNight" ColumnName="OverNight" />
+                <ScalarProperty Name="HasSplit" ColumnName="HasSplit" />
+                <ScalarProperty Name="SS_FromTime" ColumnName="SS_FromTime" />
+                <ScalarProperty Name="SS_ToTime" ColumnName="SS_ToTime" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="ActivityMaster" ColumnName="ActivityMaster" />
+                <ScalarProperty Name="ActivityCode" ColumnName="ActivityCode" />
+                <ScalarProperty Name="Holding_Acc_Code" ColumnName="Holding_Acc_Code" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+                <ScalarProperty Name="ChargedTo" ColumnName="ChargedTo" />
+                <ScalarProperty Name="EstateLocationID" ColumnName="EstateLocationID" />
+                <ScalarProperty Name="EstateID" ColumnName="EstateID" />
+                <ScalarProperty Name="TypeOfEntry" ColumnName="TypeOfEntry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_3_Export_OtherEarnings">
+            <EntityTypeMapping TypeName="AcuPayModel.tbl_3_Export_OtherEarnings">
+              <MappingFragment StoreEntitySet="tbl_3_Export_OtherEarnings">
+                <ScalarProperty Name="UploadedOn" ColumnName="UploadedOn" />
+                <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+                <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+                <ScalarProperty Name="est_emp_no" ColumnName="est_emp_no" />
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Emp_seq_no" ColumnName="Emp_seq_no" />
+                <ScalarProperty Name="Work_date" ColumnName="Work_date" />
+                <ScalarProperty Name="INCOME_ID" ColumnName="INCOME_ID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="EarningRate" ColumnName="EarningRate" />
+                <ScalarProperty Name="Total_other_earnings" ColumnName="Total_other_earnings" />
+                <ScalarProperty Name="Earnings_table_name" ColumnName="Earnings_table_name" />
+                <ScalarProperty Name="Link_id" ColumnName="Link_id" />
+                <ScalarProperty Name="Estate_location_id" ColumnName="Estate_location_id" />
+                <ScalarProperty Name="Estate_ID" ColumnName="Estate_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_4_Export_SplitTime">
+            <EntityTypeMapping TypeName="AcuPayModel.tbl_4_Export_SplitTime">
+              <MappingFragment StoreEntitySet="tbl_4_Export_SplitTime">
+                <ScalarProperty Name="UploadedOn" ColumnName="UploadedOn" />
+                <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Recoverable" ColumnName="Recoverable" />
+                <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+                <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+                <ScalarProperty Name="est_emp_no" ColumnName="est_emp_no" />
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Emp_seq_no" ColumnName="Emp_seq_no" />
+                <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+                <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+                <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+                <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+                <ScalarProperty Name="OverNight" ColumnName="OverNight" />
+                <ScalarProperty Name="HasSplit" ColumnName="HasSplit" />
+                <ScalarProperty Name="SS_FromTime" ColumnName="SS_FromTime" />
+                <ScalarProperty Name="SS_ToTime" ColumnName="SS_ToTime" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="ActivityMaster" ColumnName="ActivityMaster" />
+                <ScalarProperty Name="ActivityCode" ColumnName="ActivityCode" />
+                <ScalarProperty Name="Holding_Acc_Code" ColumnName="Holding_Acc_Code" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+                <ScalarProperty Name="ChargedTo" ColumnName="ChargedTo" />
+                <ScalarProperty Name="EstateLocationID" ColumnName="EstateLocationID" />
+                <ScalarProperty Name="EstateID" ColumnName="EstateID" />
+                <ScalarProperty Name="TypeOfEntry" ColumnName="TypeOfEntry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_5_Export_PieceTime">
+            <EntityTypeMapping TypeName="AcuPayModel.tbl_5_Export_PieceTime">
+              <MappingFragment StoreEntitySet="tbl_5_Export_PieceTime">
+                <ScalarProperty Name="UploadedOn" ColumnName="UploadedOn" />
+                <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+                <ScalarProperty Name="TemporaryGangOption" ColumnName="TemporaryGangOption" />
+                <ScalarProperty Name="TemporaryGang" ColumnName="TemporaryGang" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+                <ScalarProperty Name="est_emp_no" ColumnName="est_emp_no" />
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Emp_seq_no" ColumnName="Emp_seq_no" />
+                <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+                <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+                <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+                <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+                <ScalarProperty Name="OverNight" ColumnName="OverNight" />
+                <ScalarProperty Name="HasSplit" ColumnName="HasSplit" />
+                <ScalarProperty Name="SS_FromTime" ColumnName="SS_FromTime" />
+                <ScalarProperty Name="SS_ToTime" ColumnName="SS_ToTime" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="TotalEarnings" ColumnName="TotalEarnings" />
+                <ScalarProperty Name="ActivityMaster" ColumnName="ActivityMaster" />
+                <ScalarProperty Name="ActivityCode" ColumnName="ActivityCode" />
+                <ScalarProperty Name="Holding_Acc_Code" ColumnName="Holding_Acc_Code" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+                <ScalarProperty Name="ChargedTo" ColumnName="ChargedTo" />
+                <ScalarProperty Name="EstateLocationID" ColumnName="EstateLocationID" />
+                <ScalarProperty Name="EstateID" ColumnName="EstateID" />
+                <ScalarProperty Name="TypeOfEntry" ColumnName="TypeOfEntry" />
+                <ScalarProperty Name="DayWorked" ColumnName="DayWorked" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_6_Export_NotRequired">
+            <EntityTypeMapping TypeName="AcuPayModel.tbl_6_Export_NotRequired">
+              <MappingFragment StoreEntitySet="tbl_6_Export_NotRequired">
+                <ScalarProperty Name="UploadedOn" ColumnName="UploadedOn" />
+                <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+                <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+                <ScalarProperty Name="est_emp_no" ColumnName="est_emp_no" />
+                <ScalarProperty Name="EstateId" ColumnName="EstateId" />
+                <ScalarProperty Name="EstateLocationId" ColumnName="EstateLocationId" />
+                <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="emp_seq_no" ColumnName="emp_seq_no" />
+                <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+                <ScalarProperty Name="NRStatus" ColumnName="NRStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Servers">
+            <EntityTypeMapping TypeName="AcuPayModel.tbl_Servers">
+              <MappingFragment StoreEntitySet="tbl_Servers">
+                <ScalarProperty Name="Server" ColumnName="Server" />
+                <ScalarProperty Name="ServerID" ColumnName="ServerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Users">
+            <EntityTypeMapping TypeName="AcuPayModel.tbl_Users">
+              <MappingFragment StoreEntitySet="tbl_Users">
+                <ScalarProperty Name="Admin" ColumnName="Admin" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Users_Servers">
+            <EntityTypeMapping TypeName="AcuPayModel.tbl_Users_Servers">
+              <MappingFragment StoreEntitySet="tbl_Users_Servers">
+                <ScalarProperty Name="EstatesID" ColumnName="EstatesID" />
+                <ScalarProperty Name="ServerID" ColumnName="ServerID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Estate">
+            <EntityTypeMapping TypeName="AcuPayModel.tbl_Estate">
+              <MappingFragment StoreEntitySet="tbl_Estate">
+                <ScalarProperty Name="EstateExpCode" ColumnName="EstateExpCode" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="AddressL3" ColumnName="AddressL3" />
+                <ScalarProperty Name="AddressL2" ColumnName="AddressL2" />
+                <ScalarProperty Name="AddressL1" ColumnName="AddressL1" />
+                <ScalarProperty Name="EstateName" ColumnName="EstateName" />
+                <ScalarProperty Name="Guy_EstateLocation" ColumnName="Guy_EstateLocation" />
+                <ScalarProperty Name="Guy_EstateCode" ColumnName="Guy_EstateCode" />
+                <ScalarProperty Name="EstateID" ColumnName="EstateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

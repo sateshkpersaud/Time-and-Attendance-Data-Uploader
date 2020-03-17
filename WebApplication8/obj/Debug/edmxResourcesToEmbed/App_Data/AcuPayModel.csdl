@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AcuPayModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="AcuPayEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_1_Export_PieceWork" EntityType="AcuPayModel.tbl_1_Export_PieceWork" />
+    <EntitySet Name="tbl_2_Export_TimeDetails" EntityType="AcuPayModel.tbl_2_Export_TimeDetails" />
+    <EntitySet Name="tbl_3_Export_OtherEarnings" EntityType="AcuPayModel.tbl_3_Export_OtherEarnings" />
+    <EntitySet Name="tbl_4_Export_SplitTime" EntityType="AcuPayModel.tbl_4_Export_SplitTime" />
+    <EntitySet Name="tbl_5_Export_PieceTime" EntityType="AcuPayModel.tbl_5_Export_PieceTime" />
+    <EntitySet Name="tbl_6_Export_NotRequired" EntityType="AcuPayModel.tbl_6_Export_NotRequired" />
+    <EntitySet Name="tbl_Servers" EntityType="AcuPayModel.tbl_Servers" />
+    <EntitySet Name="tbl_Users" EntityType="AcuPayModel.tbl_Users" />
+    <EntitySet Name="tbl_Users_Servers" EntityType="AcuPayModel.tbl_Users_Servers" />
+    <EntitySet Name="tbl_Estate" EntityType="AcuPayModel.tbl_Estate" />
+  </EntityContainer>
+  <EntityType Name="tbl_1_Export_PieceWork">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Emp_Seq_No" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+    <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Quantity" Type="Decimal" Nullable="false" Precision="8" Scale="3" />
+    <Property Name="TentativeRate" Type="Decimal" Nullable="false" Precision="12" Scale="0" />
+    <Property Name="TotalEarnings" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+    <Property Name="DayWorked" Type="Decimal" Nullable="false" Precision="3" Scale="2" />
+    <Property Name="ActivityMaster" Type="Decimal" Precision="12" Scale="0" />
+    <Property Name="ActivityCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="ExpenseCode" Type="Decimal" Precision="12" Scale="0" />
+    <Property Name="Holding_ac_Code" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="LocationID" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="ChargedTo" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="EstateLocationId" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="EstateiD" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Type="Decimal" Name="est_emp_no" Precision="8" Scale="0" />
+    <Property Type="String" Name="Uploaded" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TemporaryGang" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="TemporaryGangOption" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Recoverable" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Unit" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="UploadedBy" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="UploadedOn" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_2_Export_TimeDetails">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Emp_seq_no" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="WorkDate" Type="DateTime" Precision="0" />
+    <Property Name="ShiftId" Type="Decimal" Precision="3" Scale="0" />
+    <Property Name="FromTime" Type="Time" Precision="4" />
+    <Property Name="ToTime" Type="Time" Precision="4" />
+    <Property Name="OverNight" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="HasSplit" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="SS_FromTime" Type="Time" Precision="4" />
+    <Property Name="SS_ToTime" Type="Time" Precision="4" />
+    <Property Name="Rate" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="ActivityMaster" Type="Decimal" Precision="12" Scale="0" />
+    <Property Name="ActivityCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Holding_Acc_Code" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="LocationId" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="ChargedTo" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="EstateLocationID" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="EstateID" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="TypeOfEntry" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Type="Decimal" Name="est_emp_no" Precision="8" Scale="0" />
+    <Property Type="String" Name="Uploaded" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TemporaryGang" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="TemporaryGangOption" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Vehicle" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Recoverable" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Quantity" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="UploadedBy" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="UploadedOn" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_3_Export_OtherEarnings">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Emp_seq_no" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+    <Property Name="Work_date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="INCOME_ID" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Amount" Type="Decimal" Precision="6" Scale="2" />
+    <Property Name="EarningRate" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="Total_other_earnings" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Earnings_table_name" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Link_id" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="Estate_location_id" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="Estate_ID" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Type="Decimal" Name="est_emp_no" Precision="8" Scale="0" />
+    <Property Type="String" Name="Uploaded" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UploadedBy" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="UploadedOn" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_4_Export_SplitTime">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Emp_seq_no" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+    <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ShiftId" Type="Decimal" Precision="3" Scale="0" />
+    <Property Name="FromTime" Type="Time" Nullable="false" Precision="4" />
+    <Property Name="ToTime" Type="Time" Nullable="false" Precision="4" />
+    <Property Name="OverNight" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="HasSplit" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="SS_FromTime" Type="Time" Precision="4" />
+    <Property Name="SS_ToTime" Type="Time" Precision="4" />
+    <Property Name="Rate" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="ActivityMaster" Type="Decimal" Precision="12" Scale="0" />
+    <Property Name="ActivityCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Holding_Acc_Code" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="LocationId" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="ChargedTo" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="EstateLocationID" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="EstateID" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="TypeOfEntry" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Type="Decimal" Name="est_emp_no" Precision="8" Scale="0" />
+    <Property Type="String" Name="Uploaded" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Vehicle" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Recoverable" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="Unit" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="UploadedBy" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="UploadedOn" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_5_Export_PieceTime">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Emp_seq_no" Type="Decimal" Nullable="false" Precision="8" Scale="0" />
+    <Property Name="WorkDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ShiftId" Type="Decimal" Precision="3" Scale="0" />
+    <Property Name="FromTime" Type="Time" Nullable="false" Precision="4" />
+    <Property Name="ToTime" Type="Time" Nullable="false" Precision="4" />
+    <Property Name="OverNight" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="HasSplit" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+    <Property Name="SS_FromTime" Type="Time" Precision="4" />
+    <Property Name="SS_ToTime" Type="Time" Precision="4" />
+    <Property Name="Rate" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="Qty" Type="Double" />
+    <Property Name="TotalEarnings" Type="Double" />
+    <Property Name="ActivityMaster" Type="Decimal" Precision="12" Scale="0" />
+    <Property Name="ActivityCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Holding_Acc_Code" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="LocationId" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="ChargedTo" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="EstateLocationID" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="EstateID" Type="String" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="TypeOfEntry" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="DayWorked" Type="Decimal" Precision="3" Scale="2" />
+    <Property Type="Decimal" Name="est_emp_no" Precision="8" Scale="0" />
+    <Property Type="String" Name="Uploaded" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Unit" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="TemporaryGang" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="TemporaryGangOption" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="UploadedBy" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="UploadedOn" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_6_Export_NotRequired">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="emp_seq_no" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="WorkDate" Type="DateTime" Precision="0" />
+    <Property Name="NRStatus" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Type="String" Name="EstateLocationId" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="EstateId" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="est_emp_no" Precision="8" Scale="0" />
+    <Property Type="String" Name="Uploaded" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UploadedBy" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="UploadedOn" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_Servers">
+    <Key>
+      <PropertyRef Name="ServerID" />
+    </Key>
+    <Property Type="Int32" Name="ServerID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Server" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Type="Int32" Name="UserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Active" />
+    <Property Type="Boolean" Name="Admin" />
+  </EntityType>
+  <EntityType Name="tbl_Users_Servers">
+    <Key>
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="ServerID" />
+    </Key>
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="Int32" Name="ServerID" Nullable="false" />
+    <Property Type="Decimal" Name="EstatesID" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="tbl_Estate">
+    <Key>
+      <PropertyRef Name="EstateID" />
+    </Key>
+    <Property Type="Decimal" Name="EstateID" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Guy_EstateCode" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Guy_EstateLocation" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="EstateName" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="AddressL1" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="AddressL2" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="AddressL3" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Tel" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="EstateExpCode" MaxLength="10" FixedLength="true" Unicode="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AcuPayModelStoreContainer" CdmEntityContainer="AcuPayEntities">
+    <EntitySetMapping Name="tbl_1_Export_PieceWork">
+      <EntityTypeMapping TypeName="AcuPayModel.tbl_1_Export_PieceWork">
+        <MappingFragment StoreEntitySet="tbl_1_Export_PieceWork">
+          <ScalarProperty Name="UploadedOn" ColumnName="UploadedOn" />
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Recoverable" ColumnName="Recoverable" />
+          <ScalarProperty Name="TemporaryGangOption" ColumnName="TemporaryGangOption" />
+          <ScalarProperty Name="TemporaryGang" ColumnName="TemporaryGang" />
+          <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+          <ScalarProperty Name="est_emp_no" ColumnName="est_emp_no" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Emp_Seq_No" ColumnName="Emp_Seq_No" />
+          <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="TentativeRate" ColumnName="TentativeRate" />
+          <ScalarProperty Name="TotalEarnings" ColumnName="TotalEarnings" />
+          <ScalarProperty Name="DayWorked" ColumnName="DayWorked" />
+          <ScalarProperty Name="ActivityMaster" ColumnName="ActivityMaster" />
+          <ScalarProperty Name="ActivityCode" ColumnName="ActivityCode" />
+          <ScalarProperty Name="ExpenseCode" ColumnName="ExpenseCode" />
+          <ScalarProperty Name="Holding_ac_Code" ColumnName="Holding_ac_Code" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="ChargedTo" ColumnName="ChargedTo" />
+          <ScalarProperty Name="EstateLocationId" ColumnName="EstateLocationId" />
+          <ScalarProperty Name="EstateiD" ColumnName="EstateiD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_2_Export_TimeDetails">
+      <EntityTypeMapping TypeName="AcuPayModel.tbl_2_Export_TimeDetails">
+        <MappingFragment StoreEntitySet="tbl_2_Export_TimeDetails">
+          <ScalarProperty Name="UploadedOn" ColumnName="UploadedOn" />
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Recoverable" ColumnName="Recoverable" />
+          <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+          <ScalarProperty Name="TemporaryGangOption" ColumnName="TemporaryGangOption" />
+          <ScalarProperty Name="TemporaryGang" ColumnName="TemporaryGang" />
+          <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+          <ScalarProperty Name="est_emp_no" ColumnName="est_emp_no" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Emp_seq_no" ColumnName="Emp_seq_no" />
+          <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+          <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+          <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+          <ScalarProperty Name="OverNight" ColumnName="OverNight" />
+          <ScalarProperty Name="HasSplit" ColumnName="HasSplit" />
+          <ScalarProperty Name="SS_FromTime" ColumnName="SS_FromTime" />
+          <ScalarProperty Name="SS_ToTime" ColumnName="SS_ToTime" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="ActivityMaster" ColumnName="ActivityMaster" />
+          <ScalarProperty Name="ActivityCode" ColumnName="ActivityCode" />
+          <ScalarProperty Name="Holding_Acc_Code" ColumnName="Holding_Acc_Code" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="ChargedTo" ColumnName="ChargedTo" />
+          <ScalarProperty Name="EstateLocationID" ColumnName="EstateLocationID" />
+          <ScalarProperty Name="EstateID" ColumnName="EstateID" />
+          <ScalarProperty Name="TypeOfEntry" ColumnName="TypeOfEntry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_3_Export_OtherEarnings">
+      <EntityTypeMapping TypeName="AcuPayModel.tbl_3_Export_OtherEarnings">
+        <MappingFragment StoreEntitySet="tbl_3_Export_OtherEarnings">
+          <ScalarProperty Name="UploadedOn" ColumnName="UploadedOn" />
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+          <ScalarProperty Name="est_emp_no" ColumnName="est_emp_no" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Emp_seq_no" ColumnName="Emp_seq_no" />
+          <ScalarProperty Name="Work_date" ColumnName="Work_date" />
+          <ScalarProperty Name="INCOME_ID" ColumnName="INCOME_ID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="EarningRate" ColumnName="EarningRate" />
+          <ScalarProperty Name="Total_other_earnings" ColumnName="Total_other_earnings" />
+          <ScalarProperty Name="Earnings_table_name" ColumnName="Earnings_table_name" />
+          <ScalarProperty Name="Link_id" ColumnName="Link_id" />
+          <ScalarProperty Name="Estate_location_id" ColumnName="Estate_location_id" />
+          <ScalarProperty Name="Estate_ID" ColumnName="Estate_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_4_Export_SplitTime">
+      <EntityTypeMapping TypeName="AcuPayModel.tbl_4_Export_SplitTime">
+        <MappingFragment StoreEntitySet="tbl_4_Export_SplitTime">
+          <ScalarProperty Name="UploadedOn" ColumnName="UploadedOn" />
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Recoverable" ColumnName="Recoverable" />
+          <ScalarProperty Name="Vehicle" ColumnName="Vehicle" />
+          <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+          <ScalarProperty Name="est_emp_no" ColumnName="est_emp_no" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Emp_seq_no" ColumnName="Emp_seq_no" />
+          <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+          <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+          <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+          <ScalarProperty Name="OverNight" ColumnName="OverNight" />
+          <ScalarProperty Name="HasSplit" ColumnName="HasSplit" />
+          <ScalarProperty Name="SS_FromTime" ColumnName="SS_FromTime" />
+          <ScalarProperty Name="SS_ToTime" ColumnName="SS_ToTime" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="ActivityMaster" ColumnName="ActivityMaster" />
+          <ScalarProperty Name="ActivityCode" ColumnName="ActivityCode" />
+          <ScalarProperty Name="Holding_Acc_Code" ColumnName="Holding_Acc_Code" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="ChargedTo" ColumnName="ChargedTo" />
+          <ScalarProperty Name="EstateLocationID" ColumnName="EstateLocationID" />
+          <ScalarProperty Name="EstateID" ColumnName="EstateID" />
+          <ScalarProperty Name="TypeOfEntry" ColumnName="TypeOfEntry" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_5_Export_PieceTime">
+      <EntityTypeMapping TypeName="AcuPayModel.tbl_5_Export_PieceTime">
+        <MappingFragment StoreEntitySet="tbl_5_Export_PieceTime">
+          <ScalarProperty Name="UploadedOn" ColumnName="UploadedOn" />
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="TemporaryGangOption" ColumnName="TemporaryGangOption" />
+          <ScalarProperty Name="TemporaryGang" ColumnName="TemporaryGang" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+          <ScalarProperty Name="est_emp_no" ColumnName="est_emp_no" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Emp_seq_no" ColumnName="Emp_seq_no" />
+          <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+          <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+          <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+          <ScalarProperty Name="OverNight" ColumnName="OverNight" />
+          <ScalarProperty Name="HasSplit" ColumnName="HasSplit" />
+          <ScalarProperty Name="SS_FromTime" ColumnName="SS_FromTime" />
+          <ScalarProperty Name="SS_ToTime" ColumnName="SS_ToTime" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="TotalEarnings" ColumnName="TotalEarnings" />
+          <ScalarProperty Name="ActivityMaster" ColumnName="ActivityMaster" />
+          <ScalarProperty Name="ActivityCode" ColumnName="ActivityCode" />
+          <ScalarProperty Name="Holding_Acc_Code" ColumnName="Holding_Acc_Code" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="ChargedTo" ColumnName="ChargedTo" />
+          <ScalarProperty Name="EstateLocationID" ColumnName="EstateLocationID" />
+          <ScalarProperty Name="EstateID" ColumnName="EstateID" />
+          <ScalarProperty Name="TypeOfEntry" ColumnName="TypeOfEntry" />
+          <ScalarProperty Name="DayWorked" ColumnName="DayWorked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_6_Export_NotRequired">
+      <EntityTypeMapping TypeName="AcuPayModel.tbl_6_Export_NotRequired">
+        <MappingFragment StoreEntitySet="tbl_6_Export_NotRequired">
+          <ScalarProperty Name="UploadedOn" ColumnName="UploadedOn" />
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="Uploaded" ColumnName="Uploaded" />
+          <ScalarProperty Name="est_emp_no" ColumnName="est_emp_no" />
+          <ScalarProperty Name="EstateId" ColumnName="EstateId" />
+          <ScalarProperty Name="EstateLocationId" ColumnName="EstateLocationId" />
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="emp_seq_no" ColumnName="emp_seq_no" />
+          <ScalarProperty Name="WorkDate" ColumnName="WorkDate" />
+          <ScalarProperty Name="NRStatus" ColumnName="NRStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Servers">
+      <EntityTypeMapping TypeName="AcuPayModel.tbl_Servers">
+        <MappingFragment StoreEntitySet="tbl_Servers">
+          <ScalarProperty Name="Server" ColumnName="Server" />
+          <ScalarProperty Name="ServerID" ColumnName="ServerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Users">
+      <EntityTypeMapping TypeName="AcuPayModel.tbl_Users">
+        <MappingFragment StoreEntitySet="tbl_Users">
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Users_Servers">
+      <EntityTypeMapping TypeName="AcuPayModel.tbl_Users_Servers">
+        <MappingFragment StoreEntitySet="tbl_Users_Servers">
+          <ScalarProperty Name="EstatesID" ColumnName="EstatesID" />
+          <ScalarProperty Name="ServerID" ColumnName="ServerID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Estate">
+      <EntityTypeMapping TypeName="AcuPayModel.tbl_Estate">
+        <MappingFragment StoreEntitySet="tbl_Estate">
+          <ScalarProperty Name="EstateExpCode" ColumnName="EstateExpCode" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="AddressL3" ColumnName="AddressL3" />
+          <ScalarProperty Name="AddressL2" ColumnName="AddressL2" />
+          <ScalarProperty Name="AddressL1" ColumnName="AddressL1" />
+          <ScalarProperty Name="EstateName" ColumnName="EstateName" />
+          <ScalarProperty Name="Guy_EstateLocation" ColumnName="Guy_EstateLocation" />
+          <ScalarProperty Name="Guy_EstateCode" ColumnName="Guy_EstateCode" />
+          <ScalarProperty Name="EstateID" ColumnName="EstateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
